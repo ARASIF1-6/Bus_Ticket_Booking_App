@@ -34,7 +34,8 @@ Such systems typically include features like seat selection, booking management,
 ## 🏗️ Tech Stack
 
 - **Backend:** FastAPI
-- **Database:** PostgreSQL  
-- **Tools:** Git, GitHub, VS Code, Dockerized  
+- **Database:** PostgreSQL
+- **Tools:** Git, GitHub, VS Code, Dockerized
+- RAG (Retrieval-Augmented Generation) architecture
 
 ---

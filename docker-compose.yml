@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: bususer
+      POSTGRES_PASSWORD: buspass
+      POSTGRES_DB: busdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  web:
+    build: ./backend
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://bususer:buspass@db:5432/busdb
+      # paths to the provided dataset files (these are local to the host, mounted into the container)
+      DATA_JSON_PATH: /data/data.json
+      SHYAMOLI_PATH: /data/shyamoli.txt
+      SOUDIA_PATH: /data/soudia.txt
+    volumes:
+      - ./backend/app/static:/app/app/static
+      - ./backend/app/templates:/app/app/templates
+      # mount the uploaded host files into the container at /data
+      - /mnt/data/data.json:/data/data.json:ro
+      - /mnt/data/shyamoli.txt:/data/shyamoli.txt:ro
+      - /mnt/data/soudia.txt:/data/soudia.txt:ro
+    ports:
+      - "8000:8000"
+
+volumes:
+  postgres_data:

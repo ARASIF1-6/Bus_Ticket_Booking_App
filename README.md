@@ -38,5 +38,3 @@ Such systems typically include features like seat selection, booking management,
 - **Tools:** Git, GitHub, VS Code, Dockerized  
 
 ---
-
-## 📂 Project Structure

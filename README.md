@@ -36,6 +36,6 @@ Such systems typically include features like seat selection, booking management,
 - **Backend:** FastAPI
 - **Database:** PostgreSQL
 - **Tools:** Git, GitHub, VS Code, Dockerized
-- RAG (Retrieval-Augmented Generation) pipeline architecture
+- **Pipeline:** RAG (Retrieval-Augmented Generation) architecture
 
 ---
